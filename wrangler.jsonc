@@ -1,0 +1,47 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "nextjs-on-cloudflare-workers",
+  "keep_names": false,
+  "dev": {
+    "port": 3006
+  },
+  "compatibility_date": "2025-03-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "observability": {
+    "enabled": true
+  },
+  "placement": {
+    "mode": "smart"
+  },
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "APPLICATION",
+      "service": "nextjs-on-cloudflare-workers"
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "nextjs-on-cloudflare-workers-db",
+      "database_id": "160761c2-af5b-431f-8808-322ab35e0fac",
+      "migrations_dir": "./src/db/migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "STORAGE",
+      "bucket_name": "nextjs-on-cloudflare-workers-storage"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "CACHE",
+      "id": "80bfc3d073974310b06f397b0baa0e3a"
+    }
+  ]
+}

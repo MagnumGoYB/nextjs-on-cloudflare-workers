@@ -1,0 +1,41 @@
+/** biome-ignore-all lint/suspicious/noUnknownAtRules: tailwind v4 */
+/** biome-ignore-all lint/correctness/noUnknownProperty: tailwind v4 */
+
+@import "tailwindcss";
+
+@plugin "./hero.ts";
+
+@plugin "@tailwindcss/typography";
+
+@plugin "@iconify/tailwind4" {
+  prefixes: lucide, tabler, solar, logos;
+}
+
+@source "../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}";
+@source "../components/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../app/**/*.{js,ts,jsx,tsx,mdx}";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-roboto-mono);
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer utilities {
+  .bg-hero-section-title {
+    background-image: linear-gradient(
+      91deg,
+      #fff 32.88%,
+      rgba(255, 255, 255, 0.4) 99.12%
+    );
+
+    &:where(.light, .light *) {
+      background-image: linear-gradient(
+        91deg,
+        #000 18.88%,
+        rgba(0, 0, 0, 0.77) 99.12%
+      );
+    }
+  }
+}
