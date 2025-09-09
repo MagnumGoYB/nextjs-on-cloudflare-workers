@@ -16,7 +16,7 @@
     "db:migrate:prod": "wrangler d1 migrations apply DB --remote",
     "db:studio": "drizzle-kit studio --port 4984",
     "cf:preview": "cross-env APP_ENV=development opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "cf:deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy -- --keep-vars",
+    "cf:deploy": "opennextjs-cloudflare build && pnpm db:migrate:prod && opennextjs-cloudflare deploy -- --keep-vars",
     "cf:upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload -- --keep-vars",
     "cf:typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },

@@ -12,6 +12,9 @@ export default {
     useCache: true,
   },
   transpilePackages: ['@t3-oss/env-nextjs', '@t3-oss/env-core'],
+  devIndicators: {
+    position: 'top-right',
+  },
 }
 
 import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare'

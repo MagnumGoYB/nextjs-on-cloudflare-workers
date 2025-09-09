@@ -28,7 +28,7 @@
     {
       "binding": "DB",
       "database_name": "nextjs-on-cloudflare-workers-db",
-      "database_id": "160761c2-af5b-431f-8808-322ab35e0fac",
+      "database_id": "a221e191-b8da-40a3-b31e-c26b8f266942",
       "migrations_dir": "./src/db/migrations"
     }
   ],

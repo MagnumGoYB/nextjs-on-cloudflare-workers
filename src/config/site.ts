@@ -20,7 +20,7 @@ const keywords = [
 const contactMail = 'sosbs@outlook.com'
 const url =
   env.APP_ENV === 'production'
-    ? 'https://assist-hub.sosbs2g.workers.dev'
+    ? 'https://nextjs-on-cloudflare-workers.sosbs2g.workers.dev'
     : 'http://localhost:3006'
 
 export const siteConfig = {
